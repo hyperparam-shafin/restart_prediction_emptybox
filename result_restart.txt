@@ -1,0 +1,61 @@
+gbm_best = GradientBoostingClassifier(criterion ='friedman_mse', learning_rate = 0.05, loss ='exponential', max_depth = 4,
+                                      min_samples_leaf = 20, min_samples_split = 5, n_estimators = 500, random_state = 21)
+									  
+scores = cross_val_score(gbm_best, X_train, y_train, cv=5)
+	
+Accuracy: 0.85 (+/- 0.00)
+accuracy :0.84975
+matrix :
+[[26035  3894]
+ [ 5121 24950]]
+tn, fp, fn, tp
+26035 3894 5121 24950
+report :
+             precision    recall  f1-score   support
+
+        0.0       0.84      0.87      0.85     29929
+        1.0       0.86      0.83      0.85     30071
+
+avg / total       0.85      0.85      0.85     60000
+
+
+[18  1  0  9 13  6  4 14  5 17  8 11 19 10  7 16 15  2 12  3]
+[  0.5   1.5   2.5   3.5   4.5   5.5   6.5   7.5   8.5   9.5  10.5  11.5
+  12.5  13.5  14.5  15.5  16.5  17.5  18.5  19.5]
+Index(['payment_method_ind', 'core_international_ind', 'commitment',
+       'bill3_scale', 'no_of_receivers_scale',
+       'tot_amt_now_past_due_amt_scale', 'credit_score_scale',
+       'total_devices_scale', 'trds_mop_equal_2_or_gt_num_scale',
+       'all_star_ind', 'bill2_scale', 'bill5_scale', 'line_of_business_ind',
+       'bill4_scale', 'bill1_scale', 'core_programming_ind',
+       'total_equip_charge_amt_scale', 'count_of_latecharge_scale',
+       'curr_bal_scale', 'tenure_scale'],
+
+RandomForestClassifier(bootstrap=False, class_weight=None, criterion='gini',max_depth=80, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None, min_samples_leaf=1, min_samples_split=10, min_weight_fraction_leaf=0.0, n_estimators=500, n_jobs=1, oob_score=False, random_state=None, verbose=0, warm_start=False)
+array([ 0.85493375,  0.85632143,  0.85453571,  0.8515    ,  0.85285189])
+accuracy :0.855816666667
+matrix :
+[[26022  3907]
+ [ 4744 25327]]
+tn, fp, fn, tp
+26022 3907 4744 25327
+report :
+             precision    recall  f1-score   support
+
+        0.0       0.85      0.87      0.86     29929
+        1.0       0.87      0.84      0.85     30071
+
+avg / total       0.86      0.86      0.86     60000
+
+['commitment' 'core_international_ind' 'count_of_latecharge_scale'
+ 'tenure_scale' 'credit_score_scale' 'trds_mop_equal_2_or_gt_num_scale'
+ 'tot_amt_now_past_due_amt_scale' 'bill1_scale' 'bill2_scale' 'bill3_scale'
+ 'bill4_scale' 'bill5_scale' 'curr_bal_scale' 'no_of_receivers_scale'
+ 'total_devices_scale' 'total_equip_charge_amt_scale'
+ 'core_programming_ind' 'all_star_ind' 'payment_method_ind'
+ 'line_of_business_ind']
+[ 0.02141424  0.02736125  0.13020833  0.23046583  0.02542727  0.03322426
+  0.02884136  0.05098754  0.04903199  0.05901982  0.05639217  0.06450792
+  0.06940272  0.01801915  0.01946675  0.05352986  0.02067311  0.02234329
+  0.00322737  0.01645576]
