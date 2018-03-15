@@ -1,4 +1,3 @@
-
 # import libraries required for data manipulation in python
 import os
 import pandas as pd
@@ -90,7 +89,7 @@ df_scaled['total_devices_scale'] = scale(df_scaled['total_devices'].astype('floa
 df_scaled['total_equip_charge_amt_scale'] = scale(df_scaled['total_equip_charge_amt'].astype('float64'))
 
 # drop numerical variables that has been scaled successfully
-df_scaled.drop(['count_of_latecharge','tenure','credit_score','trds_mop_equal_2_or_gt_num','tot_amt_now_past_due_amt',
+df_scaled = df_scaled.drop(['count_of_latecharge','tenure','credit_score','trds_mop_equal_2_or_gt_num','tot_amt_now_past_due_amt',
 'bill1','bill2','bill3','bill4','bill5','curr_bal','no_of_receivers','total_devices','total_equip_charge_amt'],axis=1)
 
 # backup for cleaned data ready for object to category encoding
